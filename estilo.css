@@ -1,0 +1,117 @@
+/*DOCUMENTACION: este es mi primer menu responsive adatable, con HTML y CSS
+19/3/2022
+
+los <i> son los iconos de la pagina
+los <a> son los titulos alado de los los iconos
+iconos sacados de fontawesome.com
+*/
+* {
+	font-weight: 100; /*especifica el grosor de las letras*/
+	font-family: 'Roboto Condensed', sans-serif; /*fuente de las letras*/
+} 
+
+.nav__responsive-ul{ /*desaparece el submenu para que no aparezca en pantallas grandes*/
+	display: none;
+}
+
+.nav {
+	background-color: #69c;
+}
+
+.nav__li {
+	display: inline-block;	/*modifica el NAV y le da color a los iconos*/
+	padding: 12px;
+	color: #fff; 
+}
+
+.nav__li a {  /*modifica a los textos alado de los iconos*/
+	color: #fff;
+	text-decoration: none; /*saca la parte de abajo de los textos*/
+}
+
+.nav__li:hover > a { /*cuando pase el cursor por encima del nav los textos cambiaran de color*/
+	color: #bbb;
+}
+
+.nav__li:hover > i { /*cuando pase el cursor por encima del nav los iconos cambiaran de color*/
+	color: #bbb;
+}
+
+
+.nav__li i {  /*modifica a los iconos*/
+	width: 30px;
+	box-sizing: border-box;
+	text-align: right; /*se alinean los iconos a la derecha*/
+	margin-right: 5px;
+}
+
+.nav__responsive-button-container {
+	position:  absolute;
+	width: 100%;
+	float: right;
+	font-size: 25px;
+	background-color: #69c;
+	margin-top: -64px;
+	z-index: 100;
+}
+
+.nav__responsive-button { /*icono de las barras*/
+	padding: 6px 20px;
+	text-align: right;
+	width: 100%;
+}
+
+
+@media only screen and (max-width: 600px) {  /*hace adaptable a la resolucion, cuando el menu llegue a 600px desaparecera para aparecer el submenu*/
+	.nav__ul {
+		display: none;
+	}
+
+	.nav {
+		height: 37px;
+		width: 100%;
+	}
+
+	.nav__responsive-ul {
+		display: block;
+		position: absolute;
+		width: 100%;
+		padding-top: 27px;
+		height: 37px;
+		margin-top: 37px;
+	}
+
+	.nav__li-container { /*hace la animacion del nav sea despegable*/
+		position: relative;
+		top: -1000;
+		height: calc(100vh - 64px);
+		background-color: #9bf;
+		transition: all 1s;
+		z-index: 1;
+		width: 75%;
+		padding-top: 27px;
+	}	
+
+	.nav__responsive-li {
+		width: 100%;
+		padding: 9px 20px;
+	}
+
+	.nav__responsive-li i{ /*modifica iconos del nav*/
+	width: 30px;
+	box-sizing: border-box;
+	text-align: center;
+	margin-right: 5px;
+	color: #016;
+	}
+
+	.nav__responsive-li a { /*modifica el texto alado de los iconos*/
+		color: #016;
+		text-decoration: none;
+	}
+
+	.nav__responsive-ul:hover > .nav__li-container { /*cuando pasamos el cursor por encima del nav muestra el submenu*/
+		top: -27px;
+
+	}
+}
